@@ -14,6 +14,8 @@
 		AD022BE02368F1B4008E0B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD022BDE2368F1B4008E0B9E /* LaunchScreen.storyboard */; };
 		AD022BEB2368F1B4008E0B9E /* desafio_pulentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022BEA2368F1B4008E0B9E /* desafio_pulentTests.swift */; };
 		AD022BF62368F1B4008E0B9E /* desafio_pulentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022BF52368F1B4008E0B9E /* desafio_pulentUITests.swift */; };
+		AD022C0823690809008E0B9E /* ituneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0723690809008E0B9E /* ituneModel.swift */; };
+		AD022C0A23690FB6008E0B9E /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		AD022BF12368F1B4008E0B9E /* desafio_pulentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafio_pulentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD022BF52368F1B4008E0B9E /* desafio_pulentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_pulentUITests.swift; sourceTree = "<group>"; };
 		AD022BF72368F1B4008E0B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD022C0723690809008E0B9E /* ituneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ituneModel.swift; sourceTree = "<group>"; };
+		AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AD022BD72368F1B2008E0B9E /* ViewController.swift */,
+				AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 		AD022C052368F591008E0B9E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD022C0723690809008E0B9E /* ituneModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 			files = (
 				AD022BD82368F1B2008E0B9E /* ViewController.swift in Sources */,
 				AD022BD62368F1B2008E0B9E /* AppDelegate.swift in Sources */,
+				AD022C0A23690FB6008E0B9E /* MainTableViewCell.swift in Sources */,
+				AD022C0823690809008E0B9E /* ituneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
