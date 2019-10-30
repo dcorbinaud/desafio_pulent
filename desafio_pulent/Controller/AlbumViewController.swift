@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class AlbumViewController: UIViewController {
     
@@ -60,6 +62,19 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let mp4Url = self.data?.results?[indexPath.row].previewUrl {
+            let videoURL = URL(string: mp4Url)
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
+        
     }
     
     

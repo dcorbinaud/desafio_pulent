@@ -72,7 +72,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="trackName" destination="iTc-99-UnV" id="vjF-3I-qzY"/>
-                                            <segue destination="zv9-1X-HJh" kind="presentation" id="IC9-rT-KVA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -105,21 +104,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3i8-Nr-Mxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828" y="38.23088455772114"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="3ff-es-NCD">
-            <objects>
-                <viewController id="zv9-1X-HJh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FMd-3N-1Z2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="22X-9V-QrC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mrV-Ql-GLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2830" y="38"/>
         </scene>
     </scenes>
 </document>
