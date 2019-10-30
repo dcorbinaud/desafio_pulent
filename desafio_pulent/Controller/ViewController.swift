@@ -14,37 +14,8 @@ class ViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        let url = URL(string: "https://itunes.apple.com/search?term=in+utero&mediaType=music&limit=20")
-        let request = URLRequest(url: url!)
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
-            
-            guard let data = data else {
-                return
-            }
-            
-//            print(String(decoding: data, as: UTF8.self))
-            
-            let decoder = JSONDecoder()
-            do {
-                self.source = try decoder.decode(ituneData.self, from: data)
-            } catch let catchError {
-                print(catchError.localizedDescription)
-            }
-            
-            semaphore.signal()
-            
-        }
-        
-        dataTask.resume()
-        
-        semaphore.wait()
+        let network = Network()
+        self.source = network.jsonRequest(param: "in+utero")
         
         tableView.delegate = self
         tableView.dataSource = self
