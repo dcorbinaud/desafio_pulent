@@ -31,7 +31,7 @@ class MainTableViewCell: UITableViewCell {
             }
             
             let network = Network()
-            if let imageData = network.imageRequest(url: data.artworkUrl60) {
+            if let imageData = network.imageRequest(url: data.artworkUrl60 ?? "") {
                 DispatchQueue.main.async {
                     self.artworkImage.image = UIImage(data: imageData)
                 }

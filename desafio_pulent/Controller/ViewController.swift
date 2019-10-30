@@ -7,19 +7,24 @@
 
 import UIKit
 
-class ViewController: UITableViewController{
+class ViewController: UIViewController{
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var source: ituneData? = nil
-
+    var searchText: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let network = Network()
         self.source = network.jsonRequest(param: "in+utero")
         
+        searchBar.delegate = self
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         tableView.tableFooterView = UIView()
         
@@ -28,8 +33,12 @@ class ViewController: UITableViewController{
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let list = self.source?.results {
             return list.count
         } else {
@@ -37,7 +46,7 @@ class ViewController: UITableViewController{
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainTableViewCell {
             if let data = self.source?.results?[indexPath.row] {
                 cell.cellData = data
@@ -50,7 +59,23 @@ class ViewController: UITableViewController{
         
         return UITableViewCell()
     }
-
-
 }
 
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        self.searchText = searchText.replacingOccurrences(of: " ", with: "+")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let network = Network()
+        self.source = network.jsonRequest(param: searchText)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        self.view.endEditing(true)
+    }
+    
+}
