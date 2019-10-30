@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AD022BD62368F1B2008E0B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022BD52368F1B2008E0B9E /* AppDelegate.swift */; };
-		AD022BD82368F1B2008E0B9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022BD72368F1B2008E0B9E /* ViewController.swift */; };
 		AD022BDB2368F1B2008E0B9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD022BD92368F1B2008E0B9E /* Main.storyboard */; };
 		AD022BDD2368F1B4008E0B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD022BDC2368F1B4008E0B9E /* Assets.xcassets */; };
 		AD022BE02368F1B4008E0B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD022BDE2368F1B4008E0B9E /* LaunchScreen.storyboard */; };
@@ -17,6 +16,10 @@
 		AD022C0823690809008E0B9E /* ituneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0723690809008E0B9E /* ituneModel.swift */; };
 		AD022C0A23690FB6008E0B9E /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */; };
 		AD022C0D23692020008E0B9E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0C23692020008E0B9E /* Network.swift */; };
+		AD022C0F23693C90008E0B9E /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C0E23693C90008E0B9E /* AlbumViewController.swift */; };
+		AD022C11236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */; };
+		AD022C13236A1C60008E0B9E /* Album.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD022C12236A1C60008E0B9E /* Album.storyboard */; };
+		AD022C17236A2135008E0B9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C16236A2135008E0B9E /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 /* Begin PBXFileReference section */
 		AD022BD22368F1B2008E0B9E /* desafio_pulent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_pulent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD022BD52368F1B2008E0B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD022BD72368F1B2008E0B9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD022BDA2368F1B2008E0B9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD022BDC2368F1B4008E0B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD022BDF2368F1B4008E0B9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,10 @@
 		AD022C0723690809008E0B9E /* ituneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ituneModel.swift; sourceTree = "<group>"; };
 		AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		AD022C0C23692020008E0B9E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AD022C0E23693C90008E0B9E /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTracksTableViewCell.swift; sourceTree = "<group>"; };
+		AD022C12236A1C60008E0B9E /* Album.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Album.storyboard; sourceTree = "<group>"; };
+		AD022C16236A2135008E0B9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +141,10 @@
 		AD022C032368F57B008E0B9E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD022BD72368F1B2008E0B9E /* ViewController.swift */,
+				AD022C16236A2135008E0B9E /* ViewController.swift */,
 				AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */,
+				AD022C0E23693C90008E0B9E /* AlbumViewController.swift */,
+				AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 		AD022C042368F586008E0B9E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD022C12236A1C60008E0B9E /* Album.storyboard */,
 				AD022BD92368F1B2008E0B9E /* Main.storyboard */,
 				AD022BDE2368F1B4008E0B9E /* LaunchScreen.storyboard */,
 			);
@@ -277,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD022C13236A1C60008E0B9E /* Album.storyboard in Resources */,
 				AD022BE02368F1B4008E0B9E /* LaunchScreen.storyboard in Resources */,
 				AD022BDD2368F1B4008E0B9E /* Assets.xcassets in Resources */,
 				AD022BDB2368F1B2008E0B9E /* Main.storyboard in Resources */,
@@ -304,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD022C0F23693C90008E0B9E /* AlbumViewController.swift in Sources */,
 				AD022C0D23692020008E0B9E /* Network.swift in Sources */,
-				AD022BD82368F1B2008E0B9E /* ViewController.swift in Sources */,
+				AD022C11236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift in Sources */,
 				AD022BD62368F1B2008E0B9E /* AppDelegate.swift in Sources */,
+				AD022C17236A2135008E0B9E /* ViewController.swift in Sources */,
 				AD022C0A23690FB6008E0B9E /* MainTableViewCell.swift in Sources */,
 				AD022C0823690809008E0B9E /* ituneModel.swift in Sources */,
 			);

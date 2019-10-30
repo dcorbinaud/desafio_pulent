@@ -77,4 +77,40 @@ class Network {
         
         return result
     }
+    
+    func albumRequest(id: Int) -> ituneData? {
+        var result: ituneData? = nil
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let url = URL(string: "https://itunes.apple.com/lookup?id=\(id)&entity=song")
+        let request = URLRequest(url: url!)
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            
+            guard let data = data else {
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                result = try decoder.decode(ituneData.self, from: data)
+            } catch let catchError {
+                print(catchError.localizedDescription)
+            }
+            
+            semaphore.signal()
+            
+        }
+        
+        dataTask.resume()
+        
+        semaphore.wait()
+        
+        return result
+    }
 }

@@ -26,7 +26,7 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-OT-zuF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-OT-zuF">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -48,14 +48,14 @@
                                                     <rect key="frame" x="95" y="59" width="160" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fTa-jv-uJO"/>
-                                                        <constraint firstAttribute="width" constant="160" id="tHr-yF-uV5"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="tHr-yF-uV5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km4-kH-KDZ">
-                                                    <rect key="frame" x="95" y="20" width="255" height="32"/>
+                                                    <rect key="frame" x="95" y="20" width="648" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="b6j-aA-PzC"/>
                                                     </constraints>
@@ -79,6 +79,7 @@
                                             <outlet property="Name" destination="km4-kH-KDZ" id="D8S-Vf-wE1"/>
                                             <outlet property="artworkImage" destination="yTN-mS-0he" id="mSc-Td-asZ"/>
                                             <outlet property="price" destination="VF2-us-xDu" id="9eQ-sN-H3g"/>
+                                            <segue destination="wdz-zB-Wfz" kind="show" identifier="AlbumDetails" id="urF-S4-FV1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -121,6 +122,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNU-T1-Ded" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-427" y="40"/>
+        </scene>
+        <!--Album-->
+        <scene sceneID="SnQ-SD-rRO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Album" id="wdz-zB-Wfz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVN-8n-I4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>

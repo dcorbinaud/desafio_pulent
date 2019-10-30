@@ -4,7 +4,6 @@
 //
 //  Created by bild on 10/29/19.
 //
-
 import UIKit
 
 class ViewController: UIViewController{
@@ -33,8 +32,21 @@ class ViewController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AlbumDetails" {
+            if let indexpPath = self.tableView.indexPathForSelectedRow{
+                if let viewController = segue.destination as? AlbumViewController {
+                    let network = Network()
+                    if let data = network.albumRequest(id: source?.results?[indexpPath.row].collectionId ?? 0) {
+                        viewController.data = data
+                    }
+                    
+                }
+            }
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
