@@ -16,13 +16,16 @@ class Network {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
-        let url = URL(string: "https://itunes.apple.com/search?term=\(param)&mediaType=music&limit=20")
+        let url = URL(string: "https://itunes.apple.com/search?term=\(param)&mediaType=music")
         let request = URLRequest(url: url!)
         
         let semaphore = DispatchSemaphore(value: 0)
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                return
+            }
             
             guard let data = data else {
                 return
@@ -60,6 +63,9 @@ class Network {
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                return
+            }
             
             guard let data = data else {
                 return

@@ -20,6 +20,7 @@
 		AD022C11236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */; };
 		AD022C13236A1C60008E0B9E /* Album.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD022C12236A1C60008E0B9E /* Album.storyboard */; };
 		AD022C17236A2135008E0B9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD022C16236A2135008E0B9E /* ViewController.swift */; };
+		AD92C821236A609900C4A1FE /* LoaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C820236A609900C4A1FE /* LoaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTracksTableViewCell.swift; sourceTree = "<group>"; };
 		AD022C12236A1C60008E0B9E /* Album.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Album.storyboard; sourceTree = "<group>"; };
 		AD022C16236A2135008E0B9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD92C820236A609900C4A1FE /* LoaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				AD022C0923690FB6008E0B9E /* MainTableViewCell.swift */,
 				AD022C0E23693C90008E0B9E /* AlbumViewController.swift */,
 				AD022C10236A1A0F008E0B9E /* AlbumTracksTableViewCell.swift */,
+				AD92C820236A609900C4A1FE /* LoaderTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				AD022BD62368F1B2008E0B9E /* AppDelegate.swift in Sources */,
 				AD022C17236A2135008E0B9E /* ViewController.swift in Sources */,
 				AD022C0A23690FB6008E0B9E /* MainTableViewCell.swift in Sources */,
+				AD92C821236A609900C4A1FE /* LoaderTableViewCell.swift in Sources */,
 				AD022C0823690809008E0B9E /* ituneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

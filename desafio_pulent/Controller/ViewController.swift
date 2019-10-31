@@ -12,13 +12,14 @@ class ViewController: UIViewController{
     @IBOutlet weak var searchBar: UISearchBar!
     
     var source: ituneData? = nil
+    var list: [song]? = nil
     var searchText: String = ""
+    var limit = 20
+    var totalEntries = 0
+    var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let network = Network()
-        self.source = network.jsonRequest(param: "in+utero")
         
         searchBar.delegate = self
         
@@ -51,11 +52,37 @@ class ViewController: UIViewController{
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let list = self.source?.results {
+        if let list = self.list {
             return list.count
         } else {
             return 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let arrayList = self.list {
+            if indexPath.row == arrayList.count - 1 {
+                if arrayList.count < totalEntries {
+                    
+                    self.page += 1
+                    
+                    let newLimit = self.limit * self.page
+                    
+                    if newLimit <= self.totalEntries {
+                        self.list = self.source?.results?.suffix(newLimit)
+                    } else {
+                        self.list = self.source?.results
+                    }
+                    
+                    self.perform(#selector(loadTable), with: nil, afterDelay: 1.0)
+                }
+            }
+        }
+        
+    }
+    
+    @objc func loadTable() {
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +110,18 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let network = Network()
         self.source = network.jsonRequest(param: searchText)
+        
+        if let list = self.source?.results {
+            self.totalEntries = list.count
+            
+            if self.limit <= self.totalEntries {
+                self.list = list.suffix(self.limit)
+            } else {
+                self.list = list
+            }
+
+        }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
